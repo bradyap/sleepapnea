@@ -1,0 +1,113 @@
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [WatchUi,2,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc"; @line = 4; @symbol_classdef = [sleepapneaDelegate,4,6,24]; @symbol_extends<0> = [WatchUi,4,33,40]; @symbol_extends<1> = [BehaviorDelegate,4,41,57]; ]
+class sleepapneaDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc"; @line = 6; @symbol_functiondef = [initialize,6,13,23]; ]
+    function initialize() as Void {
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_6_26_8_4_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc" 7 8 ]
+        symbol [ BehaviorDelegate %tmp.2 7 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 7 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_6_26_8_4_stop:
+    }
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc"; @line = 15; @symbol_functiondef = [onKey,15,13,18]; @symbol_param<0> = [key,15,20,23]; ]
+    function onKey(key) {
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_15_25_26_4_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc" 16 8 ]
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_16_8_24_8_if_stmt:
+        %tmp.1 = lgetv %key;
+        symbol [ key %tmp.1 16 12 15 ];
+        symbol [ getKey %tmp.2 16 16 22 ];
+        %tmp.2 = getv function %tmp.1 :getKey;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ WatchUi %tmp.4 16 28 35 ];
+        %tmp.4 = getm $.Toybox.WatchUi;
+        symbol [ KEY_START %tmp.5 16 36 45 ];
+        %tmp.5 = getv %tmp.4 :KEY_START;
+        %tmp.6 = eq %tmp.3 %tmp.5;
+        bf %tmp.6 @C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_16_8_24_8_if_false;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_16_8_24_8_if_true:
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_16_47_18_8_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc" 17 12 ]
+        symbol [ System %tmp.8 17 12 18 ];
+        %tmp.8 = getv ? :System;
+        symbol [ println %tmp.9 17 19 26 ];
+        %tmp.9 = getv function %tmp.8 :println;
+        %tmp.10 = "Start key pressed";
+        invoke %tmp.8 %tmp.9(%tmp.10);
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_16_47_18_8_stop:
+        goto @C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_16_8_24_8_if_end;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_16_8_24_8_if_false:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc" 19 13 ]
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_19_13_24_8_if_stmt:
+        %tmp.11 = lgetv %key;
+        symbol [ key %tmp.11 19 17 20 ];
+        symbol [ getKey %tmp.12 19 21 27 ];
+        %tmp.12 = getv function %tmp.11 :getKey;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        symbol [ WatchUi %tmp.14 19 33 40 ];
+        %tmp.14 = getm $.Toybox.WatchUi;
+        symbol [ KEY_UP %tmp.15 19 41 47 ];
+        %tmp.15 = getv %tmp.14 :KEY_UP;
+        %tmp.16 = eq %tmp.13 %tmp.15;
+        bf %tmp.16 @C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_19_13_24_8_if_false;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_19_13_24_8_if_true:
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_19_49_21_8_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc" 20 12 ]
+        symbol [ System %tmp.18 20 12 18 ];
+        %tmp.18 = getv ? :System;
+        symbol [ println %tmp.19 20 19 26 ];
+        %tmp.19 = getv function %tmp.18 :println;
+        %tmp.20 = "Up key pressed";
+        invoke %tmp.18 %tmp.19(%tmp.20);
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_19_49_21_8_stop:
+        goto @C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_19_13_24_8_if_end;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_19_13_24_8_if_false:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc" 22 13 ]
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_22_13_24_8_if_stmt:
+        %tmp.21 = lgetv %key;
+        symbol [ key %tmp.21 22 17 20 ];
+        symbol [ getKey %tmp.22 22 21 27 ];
+        %tmp.22 = getv function %tmp.21 :getKey;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        symbol [ WatchUi %tmp.24 22 33 40 ];
+        %tmp.24 = getm $.Toybox.WatchUi;
+        symbol [ KEY_DOWN %tmp.25 22 41 49 ];
+        %tmp.25 = getv %tmp.24 :KEY_DOWN;
+        %tmp.26 = eq %tmp.23 %tmp.25;
+        bf %tmp.26 @C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_22_13_24_8_if_end;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_22_13_24_8_if_true:
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_22_51_24_8_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc" 23 12 ]
+        symbol [ System %tmp.28 23 12 18 ];
+        %tmp.28 = getv ? :System;
+        symbol [ println %tmp.29 23 19 26 ];
+        %tmp.29 = getv function %tmp.28 :println;
+        %tmp.30 = "Down key pressed";
+        invoke %tmp.28 %tmp.29(%tmp.30);
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_22_51_24_8_stop:
+        goto @C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_22_13_24_8_if_end;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_22_13_24_8_if_end:
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_19_13_24_8_if_end:
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_16_8_24_8_if_end:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc" 25 8 ]
+        %tmp.31 = true;
+        ret %tmp.31;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaDelegate_mc_15_25_26_4_stop:
+    }
+}
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaDelegate.mc"; @line = 1; ]
+<init> {
+}

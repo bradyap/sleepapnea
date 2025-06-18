@@ -1,0 +1,336 @@
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Graphics,1,14,22]; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [WatchUi,2,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Lang,3,13,17]; ]
+using Toybox.Lang;
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [System,4,13,19]; ]
+using Toybox.System;
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Timer,5,13,18]; ]
+using Toybox.Timer;
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 7; @symbol_classdef = [sleepapneaView,7,6,20]; @symbol_extends<0> = [WatchUi,7,29,36]; @symbol_extends<1> = [View,7,37,41]; ]
+class sleepapneaView extends WatchUi.View {
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 8; @position = 8; @symbol_vardef = [todLabel,8,8,16]; ]
+    var todLabel;
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 9; @position = 8; @symbol_vardef = [timerLabel,9,8,18]; ]
+    var timerLabel;
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 10; @position = 8; @symbol_vardef = [hrLabel,10,8,15]; ]
+    var hrLabel;
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 12; @position = 8; @symbol_vardef = [timer,12,8,13]; ]
+    var timer;
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 13; @position = 8; @symbol_vardef = [seconds,13,8,15]; ]
+    var seconds = 0;
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 16; @symbol_functiondef = [initialize,16,13,23]; ]
+    function initialize() as Void {
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_16_26_18_4_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 17 8 ]
+        symbol [ View %tmp.2 17 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 17 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_16_26_18_4_stop:
+    }
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 21; @symbol_functiondef = [onLayout,21,13,21]; @symbol_param<0> = [dc,21,22,24]; @symbol_param<0>_type<0> = [Dc,21,28,30]; ]
+    function onLayout(dc as Dc) as Void {
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_21_40_26_4_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 22 8 ]
+        %tmp.1 = self;
+        symbol [ setLayout %tmp.2 22 8 17 ];
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        symbol [ Rez %tmp.4 22 18 21 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Layouts %tmp.5 22 22 29 ];
+        %tmp.5 = getv %tmp.4 :Layouts;
+        symbol [ MainLayout %tmp.6 22 30 40 ];
+        %tmp.6 = getv function %tmp.5 :MainLayout;
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 22 41 43 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        invoke %tmp.1 %tmp.2(%tmp.8);
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 23 8 ]
+        %tmp.9 = self;
+        symbol [ findDrawableById %tmp.10 23 19 35 ];
+        %tmp.10 = getv function %tmp.9 :findDrawableById;
+        %tmp.11 = "todLabel";
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        symbol [ todLabel ? 23 8 16 ];
+        putv self :todLabel %tmp.12;
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 24 8 ]
+        %tmp.13 = self;
+        symbol [ findDrawableById %tmp.14 24 21 37 ];
+        %tmp.14 = getv function %tmp.13 :findDrawableById;
+        %tmp.15 = "timerLabel";
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        symbol [ timerLabel ? 24 8 18 ];
+        putv self :timerLabel %tmp.16;
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 25 8 ]
+        %tmp.17 = self;
+        symbol [ findDrawableById %tmp.18 25 18 34 ];
+        %tmp.18 = getv function %tmp.17 :findDrawableById;
+        %tmp.19 = "hrLabel";
+        %tmp.20 = invoke %tmp.17 %tmp.18(%tmp.19);
+        symbol [ hrLabel ? 25 8 15 ];
+        putv self :hrLabel %tmp.20;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_21_40_26_4_stop:
+    }
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 31; @symbol_functiondef = [onShow,31,13,19]; ]
+    function onShow() as Void {
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_31_30_34_4_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 32 8 ]
+        symbol [ Timer %tmp.3 32 20 25 ];
+        %tmp.3 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.4 32 26 31 ];
+        %tmp.4 = getv function ? %tmp.3 :Timer;
+        %tmp.1 = newc %tmp.4 ();
+        symbol [ timer ? 32 8 13 ];
+        putv self :timer %tmp.1;
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 33 8 ]
+        symbol [ timer %tmp.6 33 8 13 ];
+        %tmp.6 = getv ? :timer;
+        symbol [ start %tmp.7 33 14 19 ];
+        %tmp.7 = getv function %tmp.6 :start;
+        %tmp.8 = self;
+        symbol [ method %tmp.9 33 20 26 ];
+        %tmp.9 = getv function %tmp.8 :method;
+        %tmp.11 = const :update;
+        symbol [ update %tmp.11 33 28 34 const ];
+        %tmp.12 = invoke %tmp.8 %tmp.9(%tmp.11);
+        %tmp.13 = 1000;
+        %tmp.14 = true;
+        invoke %tmp.6 %tmp.7(%tmp.12, %tmp.13, %tmp.14);
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_31_30_34_4_stop:
+    }
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 37; @symbol_functiondef = [onUpdate,37,13,21]; @symbol_param<0> = [dc,37,22,24]; @symbol_param<0>_type<0> = [Dc,37,28,30]; ]
+    function onUpdate(dc as Dc) as Void {
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 38 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 38 8 10 ];
+        symbol [ clear %tmp.2 38 11 16 ];
+        %tmp.2 = getv function %tmp.1 :clear;
+        invoke %tmp.1 %tmp.2();
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 41 8 ]
+        [ "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_start" "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_stop" ]
+        %clockTime.1 = local;
+        symbol [ clockTime %clockTime.1 41 12 21 ];
+        symbol [ System %tmp.3 41 24 30 ];
+        %tmp.3 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.4 41 31 43 ];
+        %tmp.4 = getv function %tmp.3 :getClockTime;
+        %tmp.5 = invoke %tmp.3 %tmp.4();
+        lputv %clockTime.1 %tmp.5;
+        symbol [ clockTime %clockTime.1 41 12 21 ];
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 42 8 ]
+        [ "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_start" "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_stop" ]
+        %hour.2 = local;
+        symbol [ hour %hour.2 42 12 16 ];
+        %tmp.6 = lgetv %clockTime.1;
+        symbol [ clockTime %tmp.6 42 19 28 ];
+        symbol [ hour %tmp.7 42 29 33 ];
+        %tmp.7 = getv %tmp.6 :hour;
+        lputv %hour.2 %tmp.7;
+        symbol [ hour %hour.2 42 12 16 ];
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 43 8 ]
+        [ "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_start" "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_stop" ]
+        %ampm.3 = local;
+        symbol [ ampm %ampm.3 43 12 16 ];
+        %tmp.8 = "AM";
+        lputv %ampm.3 %tmp.8;
+        symbol [ ampm %ampm.3 43 12 16 ];
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 46 8 ]
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_46_8_53_0_if_stmt:
+        %tmp.9 = lgetv %hour.2;
+        symbol [ hour %tmp.9 46 12 16 ];
+        %tmp.10 = 12;
+        %tmp.11 = gte %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_46_8_53_0_if_false;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_46_8_53_0_if_true:
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_46_24_51_8_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 47 12 ]
+        %tmp.12 = "PM";
+        lputv %ampm.3 %tmp.12;
+        symbol [ ampm %ampm.3 47 12 16 ];
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 48 8 ]
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_48_8_50_8_if_stmt:
+        %tmp.13 = lgetv %hour.2;
+        symbol [ hour %tmp.13 48 12 16 ];
+        %tmp.14 = 12;
+        %tmp.15 = gt %tmp.13 %tmp.14;
+        bf %tmp.15 @C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_48_8_50_8_if_end;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_48_8_50_8_if_true:
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_48_23_50_8_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 49 12 ]
+        %tmp.16 = lgetv %hour.2;
+        symbol [ hour %tmp.16 49 19 23 ];
+        %tmp.17 = 12;
+        %tmp.18 = sub %tmp.16 %tmp.17;
+        lputv %hour.2 %tmp.18;
+        symbol [ hour %hour.2 49 12 16 ];
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_48_23_50_8_stop:
+        goto @C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_48_8_50_8_if_end;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_48_8_50_8_if_end:
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_46_24_51_8_stop:
+        goto @C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_46_8_53_0_if_end;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_46_8_53_0_if_false:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 51 15 ]
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_51_15_53_0_if_stmt:
+        %tmp.19 = lgetv %hour.2;
+        symbol [ hour %tmp.19 51 19 23 ];
+        %tmp.20 = 0;
+        %tmp.21 = eq %tmp.19 %tmp.20;
+        bf %tmp.21 @C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_51_15_53_0_if_end;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_51_15_53_0_if_true:
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_51_30_53_0_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 52 12 ]
+        %tmp.22 = 12;
+        lputv %hour.2 %tmp.22;
+        symbol [ hour %hour.2 52 12 16 ];
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_51_30_53_0_stop:
+        goto @C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_51_15_53_0_if_end;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_51_15_53_0_if_end:
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_46_8_53_0_if_end:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 54 8 ]
+        [ "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_start" "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_stop" ]
+        %timeString.4 = local;
+        symbol [ timeString %timeString.4 54 12 22 ];
+        symbol [ Lang %tmp.23 54 25 29 ];
+        %tmp.23 = getm $.Toybox.Lang;
+        symbol [ format %tmp.24 54 30 36 ];
+        %tmp.24 = getv function %tmp.23 :format;
+        %tmp.25 = "$1$:$2$ $3$";
+        %tmp.26 = newa 3;
+        %tmp.27 = lgetv %hour.2;
+        symbol [ hour %tmp.27 54 53 57 ];
+        %tmp.28 = dup %tmp.26;
+        %tmp.29 = aputv %tmp.28 0 %tmp.27;
+        %tmp.30 = lgetv %clockTime.1;
+        symbol [ clockTime %tmp.30 54 59 68 ];
+        symbol [ min %tmp.31 54 69 72 ];
+        %tmp.31 = getv %tmp.30 :min;
+        symbol [ format %tmp.32 54 73 79 ];
+        %tmp.32 = getv function %tmp.31 :format;
+        %tmp.33 = "%02d";
+        %tmp.34 = invoke %tmp.31 %tmp.32(%tmp.33);
+        %tmp.35 = dup %tmp.29;
+        %tmp.36 = aputv %tmp.35 1 %tmp.34;
+        %tmp.37 = lgetv %ampm.3;
+        symbol [ ampm %tmp.37 54 89 93 ];
+        %tmp.38 = dup %tmp.36;
+        %tmp.39 = aputv %tmp.38 2 %tmp.37;
+        %tmp.40 = invoke %tmp.23 %tmp.24(%tmp.25, %tmp.39);
+        lputv %timeString.4 %tmp.40;
+        symbol [ timeString %timeString.4 54 12 22 ];
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 55 8 ]
+        symbol [ todLabel %tmp.42 55 8 16 ];
+        %tmp.42 = getv ? :todLabel;
+        symbol [ setText %tmp.43 55 17 24 ];
+        %tmp.43 = getv function %tmp.42 :setText;
+        %tmp.44 = lgetv %timeString.4;
+        symbol [ timeString %tmp.44 55 25 35 ];
+        invoke %tmp.42 %tmp.43(%tmp.44);
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 58 8 ]
+        [ "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_start" "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_stop" ]
+        %timerString.5 = local;
+        symbol [ timerString %timerString.5 58 12 23 ];
+        symbol [ Lang %tmp.45 58 26 30 ];
+        %tmp.45 = getm $.Toybox.Lang;
+        symbol [ format %tmp.46 58 31 37 ];
+        %tmp.46 = getv function %tmp.45 :format;
+        %tmp.47 = "$1$:$2$";
+        %tmp.48 = newa 2;
+        symbol [ seconds %tmp.50 58 50 57 ];
+        %tmp.50 = getv ? :seconds;
+        %tmp.51 = 60;
+        %tmp.52 = div %tmp.50 %tmp.51;
+        %tmp.53 = dup %tmp.48;
+        %tmp.54 = aputv %tmp.53 0 %tmp.52;
+        symbol [ seconds %tmp.56 58 64 71 ];
+        %tmp.56 = getv ? :seconds;
+        %tmp.57 = 60;
+        %tmp.58 = mod %tmp.56 %tmp.57;
+        %tmp.59 = dup %tmp.54;
+        %tmp.60 = aputv %tmp.59 1 %tmp.58;
+        %tmp.61 = invoke %tmp.45 %tmp.46(%tmp.47, %tmp.60);
+        lputv %timerString.5 %tmp.61;
+        symbol [ timerString %timerString.5 58 12 23 ];
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 59 8 ]
+        symbol [ timerLabel %tmp.63 59 8 18 ];
+        %tmp.63 = getv ? :timerLabel;
+        symbol [ setText %tmp.64 59 19 26 ];
+        %tmp.64 = getv function %tmp.63 :setText;
+        %tmp.65 = lgetv %timerString.5;
+        symbol [ timerString %tmp.65 59 27 38 ];
+        invoke %tmp.63 %tmp.64(%tmp.65);
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 62 8 ]
+        [ "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_start" "C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_stop" ]
+        %hr.6 = local;
+        symbol [ hr %hr.6 62 12 14 ];
+        symbol [ Sensor %tmp.67 62 17 23 ];
+        %tmp.67 = getv ? :Sensor;
+        symbol [ getInfo %tmp.68 62 24 31 ];
+        %tmp.68 = getv function %tmp.67 :getInfo;
+        %tmp.69 = invoke %tmp.67 %tmp.68();
+        symbol [ heartRate %tmp.70 62 34 43 ];
+        %tmp.70 = getv %tmp.69 :heartRate;
+        lputv %hr.6 %tmp.70;
+        symbol [ hr %hr.6 62 12 14 ];
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 63 8 ]
+        symbol [ hrLabel %tmp.72 63 8 15 ];
+        %tmp.72 = getv ? :hrLabel;
+        symbol [ setText %tmp.73 63 16 23 ];
+        %tmp.73 = getv function %tmp.72 :setText;
+        symbol [ Lang %tmp.74 63 24 28 ];
+        %tmp.74 = getm $.Toybox.Lang;
+        symbol [ format %tmp.75 63 29 35 ];
+        %tmp.75 = getv function %tmp.74 :format;
+        %tmp.76 = "$1$ bpm";
+        %tmp.77 = newa 1;
+        %tmp.78 = lgetv %hr.6;
+        symbol [ hr %tmp.78 63 48 50 ];
+        %tmp.79 = dup %tmp.77;
+        %tmp.80 = aputv %tmp.79 0 %tmp.78;
+        %tmp.81 = invoke %tmp.74 %tmp.75(%tmp.76, %tmp.80);
+        invoke %tmp.72 %tmp.73(%tmp.81);
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 65 8 ]
+        symbol [ View %tmp.83 65 8 12 ];
+        %tmp.83 = getv ? :View;
+        symbol [ onUpdate %tmp.84 65 13 21 ];
+        %tmp.84 = getv function %tmp.83 :onUpdate;
+        %tmp.85 = lgetv %dc;
+        symbol [ dc %tmp.85 65 22 24 ];
+        invoke %tmp.83 %tmp.84(%tmp.85);
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_37_40_66_4_stop:
+    }
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 71; @symbol_functiondef = [onHide,71,13,19]; ]
+    function onHide() as Void {
+    }
+    [ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 75; @symbol_functiondef = [update,75,13,19]; ]
+    function update() as Void {
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_75_30_81_4_start:
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 77 8 ]
+        symbol [ WatchUi %tmp.1 77 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.2 77 16 29 ];
+        %tmp.2 = getv function %tmp.1 :requestUpdate;
+        invoke %tmp.1 %tmp.2();
+[ "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc" 80 8 ]
+        symbol [ seconds %tmp.3 80 8 15 ];
+        %tmp.3 = getv self :seconds;
+        %tmp.4 = 1;
+        %tmp.5 = add %tmp.3 %tmp.4;
+        symbol [ seconds ? 80 8 15 ];
+        putv self :seconds dup %tmp.5;
+C__Users_bpett_Documents_sleepapnea_source_sleepapneaView_mc_75_30_81_4_stop:
+    }
+}
+[ @file = "C:\Users\bpett\Documents\sleepapnea\source\sleepapneaView.mc"; @line = 1; ]
+<init> {
+}
