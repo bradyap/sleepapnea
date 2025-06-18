@@ -1,0 +1,1 @@
+The worst Garmin app ever written. Monitors HR, pulse ox, and respiratory rate and logs to a FIT file for the purpose of identifying sleep apnea. Requires external HR strap with respiratory rate monitoring.
