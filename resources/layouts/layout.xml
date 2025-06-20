@@ -2,4 +2,7 @@
     <label id="todLabel" x="70" y="20" text="" color="Graphics.COLOR_WHITE" />
     <label id="timerLabel" x="70" y="50" text="" color="Graphics.COLOR_WHITE" />
     <label id="hrLabel" x="70" y="80" text="" color="Graphics.COLOR_WHITE" />
+    <label id="pulseOxLabel" x="70" y="110" text="" color="Graphics.COLOR_WHITE" />
+    <label id="respRateLabel" x="50" y="140" text="" color="Graphics.COLOR_WHITE" />
+    <label id="statusLabel" x="70" y="170" text="" color="Graphics.COLOR_RED" />
 </layout>

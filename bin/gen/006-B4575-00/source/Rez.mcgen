@@ -11,9 +11,19 @@ module Rez {
 
     module Layouts {
         function MainLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
-            var rez_cmp_local_text_TimeLabel = new WatchUi.Text({:identifier=>"TimeLabel", :color=>Graphics.COLOR_BLACK, :locX=>5, :locY=>5, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+            var rez_cmp_local_text_todLabel = new WatchUi.Text({:identifier=>"todLabel", :color=>Graphics.COLOR_WHITE, :locX=>70, :locY=>20, :font=>Graphics.FONT_MEDIUM});
 
-            return [rez_cmp_local_text_TimeLabel] as Array<WatchUi.Drawable>;
+            var rez_cmp_local_text_timerLabel = new WatchUi.Text({:identifier=>"timerLabel", :color=>Graphics.COLOR_WHITE, :locX=>70, :locY=>50, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_hrLabel = new WatchUi.Text({:identifier=>"hrLabel", :color=>Graphics.COLOR_WHITE, :locX=>70, :locY=>80, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_pulseOxLabel = new WatchUi.Text({:identifier=>"pulseOxLabel", :color=>Graphics.COLOR_WHITE, :locX=>70, :locY=>110, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_respRateLabel = new WatchUi.Text({:identifier=>"respRateLabel", :color=>Graphics.COLOR_WHITE, :locX=>50, :locY=>140, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_statusLabel = new WatchUi.Text({:identifier=>"statusLabel", :color=>Graphics.COLOR_RED, :locX=>70, :locY=>170, :font=>Graphics.FONT_MEDIUM});
+
+            return [rez_cmp_local_text_todLabel, rez_cmp_local_text_timerLabel, rez_cmp_local_text_hrLabel, rez_cmp_local_text_pulseOxLabel, rez_cmp_local_text_respRateLabel, rez_cmp_local_text_statusLabel] as Array<WatchUi.Drawable>;
         }
     } // Layouts
 
